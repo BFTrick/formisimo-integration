@@ -1,4 +1,4 @@
 formisimo-integration
 =====================
 
-A plugin to integrate Formisimo with your WordPress site
+Integrate Formisimo with your WordPress site
