@@ -53,11 +53,11 @@ class Formisimo_Settings extends Formisimo_Settings_API {
 	public function init_fields () {
 		$fields = array();
 
-		$fields['formisimo'] = array(
-			'name' => __( 'Enable Formisimo', 'formisimo-integration' ),
-			'description' => '',
-			'type' => 'checkbox',
-			'default' => true,
+		$fields['foid'] = array(
+			'name' => __( 'Foid', 'formisimo-integration' ),
+			'description' => 'This can be <a href="' . plugins_url( 'formisimo-integration/assets/images/foid.png' ) . '" target="_blank">found</a> at <a href="https://app.formisimo.com/tracking-code/" target="_blank">app.formisimo.com/tracking-code/</a>.',
+			'type' => 'text',
+			'default' => '',
 			'section' => 'general'
 		);
 		

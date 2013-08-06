@@ -19,6 +19,7 @@ class Formisimo {
 	public function __construct( $file ) {
 		$this->name = 'Formisimo';
 		$this->token = 'formisimo';
+		$this->version = '1.0.0';
 
 		add_action( 'init', array( $this, 'init' ) );
 	}
@@ -44,5 +45,14 @@ class Formisimo {
 		$this->settings_screen = new Formisimo_Settings_Screen( array(
 			'default_tab' => 'formisimo'
 		));
+
+		// load script if the user provided a `foid`
+		if ( isset($this->settings['formisimo']['foid']) && !empty($this->settings['formisimo']['foid']) ) {
+			// load formisimo loading script
+			wp_enqueue_script( "load-formisimo", plugins_url( 'formisimo-integration/assets/scripts/load-formisimo.js' ), array(), $this->version, true );
+
+			// pass variable into the load-formisimo script
+			wp_localize_script( "load-formisimo", "foid_", $this->settings['formisimo']['foid'] );	
+		}
 	}
 }

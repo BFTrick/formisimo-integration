@@ -249,7 +249,7 @@ class Formisimo_Settings_API {
 		$options = $this->get_settings();
 		echo '<input id="' . esc_attr( $args['key'] ) . '" name="' . $this->token . '[' . esc_attr( $args['key'] ) . ']" size="40" type="text" value="' . esc_attr( $options[$args['key']] ) . '" />' . "\n";
 		if ( isset( $args['data']['description'] ) ) {
-			echo '<span class="description">' . esc_html( $args['data']['description'] ) . '</span>' . "\n";
+			echo '<span class="description">' . $args['data']['description'] . '</span>' . "\n";
 		}
 	} // End form_field_text()
 	
