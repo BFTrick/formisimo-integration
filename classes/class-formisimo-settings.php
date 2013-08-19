@@ -60,6 +60,13 @@ class Formisimo_Settings extends Formisimo_Settings_API {
 			'default' => '',
 			'section' => 'general'
 		);
+		$fields['confirmation-code'] = array(
+			'name' => __( 'Confirmation Code', 'formisimo-integration' ),
+			'description' => 'The confirmation code is actually the src code for <a href="' . plugins_url( 'formisimo-integration/assets/images/confirmation-image.png' ) . '" target="_blank">an image</a> at <a href="https://app.formisimo.com/tracking-code/" target="_blank">app.formisimo.com/tracking-code/</a>.',
+			'type' => 'text',
+			'default' => '',
+			'section' => 'general'
+		);
 		
 		$this->fields = $fields;
 	} // End init_fields()
